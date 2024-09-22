@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-font: 'Open Sans', sans-serif;
+    --header-font: 'Bebas Neue', sans-serif;
+    --special-font: 'Lexend', sans-serif;
+    --background-color: #0c1524;
+    --primary-color: #333;
+    --secondary-color: #fff;
+    --highlight-color: #f61a30;
+    --primary-hover-color: #dc757f;
+    --background-overlay: rgba(0, 0, 0, 0.5);
+    --background-nav: #020815;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.left-nav img {
+    width: 133px;
+    margin-right: 25px;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 15px;
+    background-color: var(--background-nav);
+    width: 100%;
+    top: 0;
+    
+}
+.side-bar{
+   display: none;
+}
+.side-bar.active{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 95vh;
+    width: 400px;
+    z-index: 999;
+    background-color: var(--secondary-color);
+    margin-top: 58px;
+    overflow: scroll;
+    transition: right 0.3s ease;
+}
+
+.side-bar ul li{
+  list-style: none;
+  font-family: var(--primary-font);
+  padding: 10px;
+  border-bottom: 1px solid #ebe9e9;
+  
+}
+
+.side-bar ul li:hover{
+ background-color: #eeeded;
+    
+  }
+
+.hamburger-menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 15px;
+    height: 20px;
+    margin-top: 3px;
+    margin-right: 20px;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-left: 5px;
+}
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.side-bar i{
+    vertical-align: middle;
+    color: var(--highlight-color); 
+    padding: 5px;
+    width: 35px;
+}
+.social-media a:hover{
+    border-bottom: 2px solid var(--background-color);
+    width: 140px;
+}
+.social-media i{
+    vertical-align: middle;
+    color: var(--primary-color); 
+    padding: 5px;
+    width: 35px;
+}
+.side-bar a{
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 10px;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    
+  }
+.social-media  {
+    margin-top: 10px;
+    padding: 5px;
+  }
+  .social-media a {
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+  }
+.left-nav, .right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.left-nav a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-family: var(--header-font);
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-right: 20px;
+}
+.left-nav a:hover{
+    color: var(--primary-hover-color);
+}
+.left-nav a:last-child {
+    margin-right: 0;
+}
+
+.left-nav i {
+    font-size: 1.7em;
+    vertical-align: middle;
+}
+
+.left-nav .dropdown {
+    position: relative;
+}
+
+.left-nav .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--secondary-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px;
+    border-radius: 10px;
+    width: 180px; 
+}
+
+.left-nav .dropdown-content a {
+    text-decoration: none;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    font-family: var(--header-font);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.left-nav .dropdown-content a i {
+    margin-right: 8px; 
+}
+
+.left-nav .dropdown-content a:hover {
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.left-nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.left-nav .dropdown.instruments .dropdown-content {
+    left: auto;
+    right: 0; 
+}
+
+.right-nav .login {
+    padding: 8px 16px;
+    background-color: var(--background-nav);
+    border: none;
+    cursor: pointer;
+    font-family: var(--header-font);
+    color: var(--secondary-color);
+    border: var(--secondary-color);
+    border-style: solid;
+    border-radius: 50px;
+    width: 100px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    border-width: 2px;
+}
+
+.right-nav .start {
+    margin-left: 10px;
+    padding: 10px 16px;
+    background-color: var(--highlight-color);
+    border: none;
+    cursor: pointer;
+    font-family: var(--header-font);
+    color: var(--secondary-color);
+    border-radius: 50px;
+    width: 170px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-right: 20px;
+}
+
+.right-nav .start:hover {
+    background-color: var(--primary-hover-color);
+    transition: 0.3s;
+}
+
+.right-nav .login:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: 0.3s;
+}
+
+
+.right-nav i {
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+.right-nav .material-symbols-outlined {
+    color: var(--secondary-color);
+    padding-left: 10px;
+}
+.favorite-songs h1{
+    color: var(--secondary-color);
+    text-align: center;
+    margin-top: 120px;
+    font-family: var(--special-font);
+    font-size: 35px;
+}
+
+.favorite-songs p{
+    color: var(--secondary-color);
+    text-align: center;
+    font-family: var(--primary-font);
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.piano-guy{
+    margin-top: 40px;
+    justify-content: center;
+    display: flex;
+    gap: 5%;
+    align-items: center;
+}
+.piano-guy img{
+    max-width: 50%;
+    height: 100%;
+}
+
+.piano-title{
+    display: flex;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    gap: 50px;
+}
+
+
+.piano-description1  {
+    margin-top: 30px;
+}
+
+.piano-description2  {
+    margin-top: 30px;
+}
+.piano-description p{
+    text-align: left;
+    margin-left: 87px;
+}
+
+.piano-title h1{
+    margin-top: 50px;
+}
+
+.piano-description1 p{
+    text-align: left;
+    margin-left: 87px;
+}
+
+.piano-description2 h2{
+    text-align: left;
+    margin-left: 10px;
+}
+.start-free{
+    text-align: center;
+}
+.start-free .start{
+        margin-left: 10px;
+        padding: 10px 16px;
+        background-color: var(--highlight-color);
+        border: none;
+        cursor: pointer;
+        font-family: var(--header-font);
+        color: var(--secondary-color);
+        border-radius: 50px;
+        width: 250px;
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin-top: 20px;
+    }
+    .start-free i {
+        font-size: 1.5em;
+        vertical-align: middle;
+    }
+    
+    .emphasize{
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 200;
+        padding-bottom: 100px;
+    }
+    .emphasize em{
+        color: #aba7a7;
+        font-family: var(--primary-font);
+
+    }
+
+    .start-free button:hover{
+        background-color: var(--primary-hover-color);
+    }
+
+    @media (max-width: 1015px) {
+        .right-nav .login {
+         display: none;
+        }
+    }
+
+    @media (max-width: 865px) {
+        .left-nav a {
+         display: none;
+        }
+
+        .piano-guy{
+            display: block;
+            text-align: center;
+        }
+        .start-free{
+            text-align: center;
+        }
+        .start-free .start{
+                margin-left: 10px;
+                padding: 10px 16px;
+                background-color: var(--highlight-color);
+                border: none;
+                cursor: pointer;
+                font-family: var(--header-font);
+                color: var(--secondary-color);
+                border-radius: 50px;
+                width: 100%;
+                font-size: 15px;
+                letter-spacing: 2px;
+                margin-top: 20px;
+            }
+            .start-free i {
+                font-size: 1.5em;
+                vertical-align: middle;
+            }
+            .piano-description{
+                margin-left: 20px;
+            }
+            .piano-description1{
+                margin-left: 20px;
+            }
+            .piano-description2{
+                margin-left: 20px;
+            }
+            .piano-title{
+                display: flex;
+                font-family: var(--primary-font);
+                color: var(--secondary-color);
+                gap: 30px;
+            }
+            .piano-description p{
+                text-align: left;
+                margin-left: 70px;
+            }
+            .emphasize{
+                text-align: center;
+                margin-top: 20px;
+                font-size: 14px;
+                font-weight: 200;
+                padding-bottom: 100px;
+            }
+            .emphasize em{
+                color: #aba7a7;
+                font-family: var(--primary-font);
+        
+            }
+    }
